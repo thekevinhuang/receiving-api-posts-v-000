@@ -21,7 +21,14 @@
   $(function() {
     $('form').submit(function(event) {
       event.preventDefault()
-      alert("this actually works")
+
+      var values = $(this).serialize()
+
+      var posting = $.post('/posts', values)
+
+      posting.done(function(data){
+        console.log(data)
+      })
     })
   })
 </script>
