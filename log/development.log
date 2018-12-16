@@ -7083,3 +7083,22 @@ Processing by PostsController#create as */*
   [1m[36m (9.5ms)[0m  [1mcommit transaction[0m
 [active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
 Completed 201 Created in 28ms (Views: 1.3ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/posts/new" for 207.38.164.248 at 2018-12-16 19:04:19 +0000
+Cannot render console from 207.38.164.248! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (37.6ms)
+Completed 200 OK in 422ms (Views: 389.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for 207.38.164.248 at 2018-12-16 19:04:25 +0000
+Cannot render console from 207.38.164.248! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TITRFLDDlCbYsTpCWVcuW3NYmG8fQ4awHBVBTIIFAP+fql7HM+ZG0wKovA7fkqkpHUT3fCYHqtdcgbmYfZzYgw==", "post"=>{"title"=>"no you ", "description"=>"search"}}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "no you "], ["description", "search"], ["created_at", "2018-12-16 19:04:25.490007"], ["updated_at", "2018-12-16 19:04:25.490007"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 201 Created in 126ms (Views: 37.0ms | ActiveRecord: 4.7ms)
